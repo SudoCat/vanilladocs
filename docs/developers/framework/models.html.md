@@ -10,10 +10,10 @@ The theory of a Model in MVC is that it is an object representation of the data 
 
 ```php
 // Create a validation object to handle validation issues that the model will encounter:
-$Validation = new Validation();
+$Validation = new Gdn_Validation();
 
 // Create a new model based on a table in the database called "Blog":
-$BlogModel = new Model('Blog', $Validation);
+$BlogModel = new Gdn_'Blog', $Validation);
 
 // Retrieve a DataSet from the Blog table:
 $BlogData = $BlogModel->GetWhere(array('BlogID' => '12'));
@@ -71,11 +71,11 @@ In order for the database, models, validation, & datasets to shine, we need to g
 
 ```php
 public function New() {
-   $Validation = new Validation();
-   $BlogModel = new Model('Blog', $Validation);
+   $Validation = new Gdn_);
+   $BlogModel = new Gdn_Model('Blog', $Validation);
 
    // Set the BlogModel on the form.
-   $this->Form->SetModel($BlogModel);
+   $this->Form->Set$BlogModel);
 
    // If the form has already been posted back...
    if ($this->Form->AuthenticatedPostBack()) {
@@ -106,13 +106,13 @@ In this example, you can see I’ve referenced two fields on the Model that is b
 
 ```php
 public function Edit($BlogID = '') {
-   $Validation = new Validation();
-   $BlogModel = new Model('Blog', $Validation);
+   $Validation = new Gdn_);
+   $BlogModel = new Gdn_Model('Blog', $Validation);
 
    <strong>// Load the blog being edited $Blog = $BlogModel ->GetWhere(array('BlogID' => $BlogID)) ->FirstRow();</strong>
 
    // Set the BlogModel on the form.
-   $this->Form->SetModel($BlogModel);
+   $this->Form->Set$BlogModel);
 
    // Make sure the form knows which item we are editing.
    $this->Form->AddHidden('BlogID', $BlogID);
